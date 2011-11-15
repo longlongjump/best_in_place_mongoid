@@ -14,7 +14,7 @@ RSpec.configure do |config|
   require 'rspec/expectations'
 
   config.include RSpec::Matchers
-  config.include BestInPlace::TestHelpers
+  config.include BestInPlaceMongoid::TestHelpers
 
   # == Mock Framework
   config.mock_with :rspec

@@ -1,11 +1,9 @@
-# Best In Place
-[![Build Status](https://secure.travis-ci.org/bernat/best_in_place.png)](http://travis-ci.org/bernat/best_in_place)
-**The Unobtrusive in Place editing solution**
-
+# Best In Place Mongoid
 
 ##Description
 
-**Best in Place** is a jQuery based AJAX Inplace-Editor that takes profit of RESTful server-side controllers to allow users to edit stuff with
+**Best in Place Mongoid** is a fork of **Best in Place** prepared for Mongoid documents.
+**Best in place** jQuery based AJAX Inplace-Editor that takes profit of RESTful server-side controllers to allow users to edit stuff with
 no need of forms. If the server have standard defined REST methods, particularly those to UPDATE your objects (HTTP PUT), then by adding the
 Javascript file to the application it is making all the fields with the proper defined classes to become user in-place editable.
 
@@ -50,8 +48,6 @@ Options:
 - **:sanitize**: True by default. If set to false the input/textarea will accept html tags.
 - **:html_args**: Hash of html arguments, such as maxlength, default-value etc.
 
-
-I created a [test_app](https://github.com/bernat/best_in_place/tree/master/test_app) and a running demo in heroku to test the features.
 
 Examples (code in the views):
 
@@ -100,21 +96,7 @@ Example:
 
 At the same time, you must define the restrictions, validations and error messages in the model, as the example below:
 
-    class User < ActiveRecord::Base
-      validates :name,
-        :length => { :minimum => 2, :maximum => 24, :message => "has invalid length"},
-        :presence => {:message => "can't be blank"}
-      validates :last_name,
-        :length => { :minimum => 2, :maximum => 24, :message => "has invalid length"},
-        :presence => {:message => "can't be blank"}
-      validates :address,
-        :length => { :minimum => 5, :message => "too short length"},
-        :presence => {:message => "can't be blank"}
-      validates :email,
-        :presence => {:message => "can't be blank"},
-        :format => {:with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i, :message => "has wrong email format"}
-      validates :zip, :numericality => true, :length => { :minimum => 5 }
-    end
+  # TODO - example
 
 When the user tries to introduce invalid data, the error messages defined in the model will be displayed in pop-up windows using the jQuery.purr plugin.
 

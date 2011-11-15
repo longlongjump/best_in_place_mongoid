@@ -1,5 +1,5 @@
-module BestInPlace
-  module BestInPlaceHelpers
+module BestInPlaceMongoid
+  module BestInPlaceMongoidHelpers
 
     def best_in_place(object, field, opts = {})
       opts[:type] ||= :input
@@ -21,7 +21,7 @@ module BestInPlace
         collection = opts[:collection].to_json
       end
       out = "<span class='best_in_place'"
-      out << " id='#{BestInPlace::Utils.build_best_in_place_id(object, field)}'"
+      out << " id='#{BestInPlaceMongoid::Utils.build_best_in_place_id(object, field)}'"
       out << " data-url='#{opts[:path].blank? ? url_for(object).to_s : url_for(opts[:path])}'"
       out << " data-object='#{object.class.to_s.gsub("::", "_").underscore}'"
       out << " data-collection='#{collection}'" unless collection.blank?

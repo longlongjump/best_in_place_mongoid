@@ -1,7 +1,7 @@
 # encoding: utf-8
 require "spec_helper"
 
-describe BestInPlace::BestInPlaceHelpers do
+describe BestInPlaceMongoid::BestInPlaceMongoidHelpers do
   describe "#best_in_place" do
     before do
       @user = User.new :name => "Lucia",
@@ -26,7 +26,7 @@ describe BestInPlace::BestInPlaceHelpers do
         @span = nk.css("span")
       end
 
-      context "when it's an ActiveRecord model" do
+      context "when it's an Mongoid document" do
         it "should have a proper id" do
           @span.attribute("id").value.should == "best_in_place_user_#{@user.id}_name"
         end
