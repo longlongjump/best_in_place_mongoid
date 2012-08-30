@@ -9,7 +9,7 @@ module BestInPlaceMongoid
       if opts[:display_with] && !opts[:display_with].is_a?(Proc) && !ViewHelpers.respond_to?(opts[:display_with])
         raise ArgumentError, "Can't find helper #{opts[:display_with]}"
       end
-      
+
       opts[:type] ||= :input
       opts[:collection] ||= []
       field = field.to_s
@@ -56,7 +56,7 @@ module BestInPlaceMongoid
         object.send field
       end
     end
-    
+
     private
        def build_value_for(object, field, opts)
          if opts[:display_as]
@@ -82,7 +82,7 @@ module BestInPlaceMongoid
        def attribute_escape(data)
          data.to_s.gsub("&", "&amp;").gsub("'", "&apos;") unless data.nil?
        end
-     
+
   end
 end
 

@@ -17,8 +17,8 @@ Gem::Specification.new do |s|
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
 
-  s.add_dependency "rails", "~> 3.1.0"
-  s.add_dependency "mongoid", "~> 2.3.3"
+  s.add_dependency "rails"
+  s.add_dependency "mongoid"
   s.add_dependency "jquery-rails"
 
   s.add_development_dependency "rspec-rails", "~> 2.7.0"
